@@ -1,7 +1,7 @@
 <?php
 
 /**
- * User class
+ * User class<br>
  * This class will care about authentication
  * 
  */

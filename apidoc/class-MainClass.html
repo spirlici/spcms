@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class MainClass</title>
+
+	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+		</div>
+
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-App.html">App</a></li>
+				<li><a href="class-Controller.html">Controller</a></li>
+				<li><a href="class-Db.html">Db</a></li>
+				<li class="active"><a href="class-MainClass.html">MainClass</a></li>
+				<li><a href="class-Model.html">Model</a></li>
+				<li><a href="class-Session.html">Session</a></li>
+				<li><a href="class-User.html">User</a></li>
+				<li><a href="class-View.html">View</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class MainClass</h1>
+
+
+	<div class="description">
+	<p>Main class<br>
+From this class will be extended <code>Controller</code> and <code>Model</code> classes</p>
+	</div>
+
+
+
+	<div>
+		<h4>Direct known subclasses</h4>
+			<a href="class-Controller.html">Controller</a>, 
+			<a href="class-Model.html">Model</a>
+	</div>
+
+	<div>
+		<h4>Indirect known subclasses</h4>
+			<a href="class-User.html">User</a>
+	</div>
+
+
+
+
+
+	<div class="info">
+		
+		
+		
+		
+
+			<b>Located at</b> <a href="source-class-MainClass.html#3-44" title="Go to source code">classes/mainclass.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="loadModel" id="_loadModel">
+
+		<td class="attributes"><code>
+			 public 
+
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_loadModel">#</a>
+		<code><a href="source-class-MainClass.html#9-19" title="Go to source code">loadModel</a>( <span>string <var>$name</var></span> )</code>
+
+		<div class="description short">
+			<p>Load a model<br>
+This function will load an model and return an instance of this model</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Load a model<br>
+This function will load an model and return an instance of this model</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd>$model      Model's name</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					mixed<br>Model Instance
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="__get" id="___get">
+
+		<td class="attributes"><code>
+			 public 
+
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___get">#</a>
+		<code><a href="source-class-MainClass.html#21-31" title="Go to source code">__get</a>( <span>string <var>$name</var></span> )</code>
+
+		<div class="description short">
+			<p>Getter function<br>
+By default this function will try to load <code>$name</code> model<br>
+So on our Models and Controllers we will be able to call <code>$this-&gt;ModelName-&gt;fooMethod()</code></p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Getter function<br>
+By default this function will try to load <code>$name</code> model<br>
+So on our Models and Controllers we will be able to call <code>$this-&gt;ModelName-&gt;fooMethod()</code></p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd>Property name</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					mixed
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="db" id="_db">
+
+		<td class="attributes"><code>
+			 public 
+
+			Mixed;
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_db">#</a>
+		<code><a href="source-class-MainClass.html#33-43" title="Go to source code">db</a>( )</code>
+
+		<div class="description short">
+			<p>Return an instance of Db Class
+If not connection to the database is made then firstly will try to connect to the database
+If connection to the database fails then <code>false</code> value will be returned</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Return an instance of Db Class
+If not connection to the database is made then firstly will try to connect to the database
+If connection to the database fails then <code>false</code> value will be returned</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					Mixed;
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

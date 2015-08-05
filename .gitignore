@@ -1,3 +1,4 @@
 
 #exclude tools directory
 /tools
+/app/config

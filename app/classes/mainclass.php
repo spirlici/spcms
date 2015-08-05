@@ -1,13 +1,13 @@
 <?php
 
 /**
- * Main class
+ * Main class<br>
  * From this class will be extended `Controller` and `Model` classes
  */
 class MainClass {
     
     /**
-     * Load a model
+     * Load a model<br>
      * This function will load an model and return an instance of this model
      * 
      * @param   string  $model      Model's name
@@ -19,8 +19,8 @@ class MainClass {
     }
     
     /**
-     * Getter function
-     * By default this function will try to load `$name` model
+     * Getter function<br>
+     * By default this function will try to load `$name` model<br>
      * So on our Models and Controllers we will be able to call `$this->ModelName->fooMethod()`
      * 
      * @param   string   $name   Property name
