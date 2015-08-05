@@ -15,11 +15,13 @@ class MainClass {
      */
     public function loadModel($name) {
         
+        return $model;
     }
     
     /**
      * Getter function
      * By default this function will try to load `$name` model
+     * So on our Models and Controllers we will be able to call `$this->ModelName->fooMethod()`
      * 
      * @param   string   $name   Property name
      * @return  mixed
@@ -29,13 +31,14 @@ class MainClass {
     }
     
     /**
-     * Return an Db instance
-     * If not connection to the database is made, then firstly will try to connect to the database 
-     * and then return an instance of Db Class
+     * Return an instance of Db Class
+     * If not connection to the database is made then firstly will try to connect to the database
+     * If connection to the database fails then `false` value will be returned
      * 
-     * @return  $db;
+     * @return  Mixed;
      */
     public function db(){
         
+        return $db;
     }
 }
