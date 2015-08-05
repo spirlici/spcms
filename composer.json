@@ -1,0 +1,13 @@
+{
+    "name": "spirlici/spcms",
+    "description": "Example CMS",
+    "require": {
+        "smarty/smarty": "*"
+    },
+    "authors": [
+        {
+            "name": "Sergiu Pirlici",
+            "email": "sergiu103@mail.ru"
+        }
+    ]
+}
