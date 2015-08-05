@@ -23,6 +23,9 @@
         {else}
             <a href="/user/profile">Profile</a>
         {/if}
+        &nbsp;|&nbsp;
+        <a href="https://github.com/spirlici/spcms.git" target="_blank">GitHub</a>
+        
     </div>
         {block name="main_content"}{/block}
     </body>
