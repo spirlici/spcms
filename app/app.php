@@ -11,7 +11,7 @@ class App {
      * Run the application
      */
     public function run() {
-        echo "Application started";
+        
         return true;
     }
 }
