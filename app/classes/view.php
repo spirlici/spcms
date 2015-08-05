@@ -2,7 +2,10 @@
 
 /**
  * View class
+ * 
  * Work with views
+ * 
+ * @author  Sergiu Pirlici      <www.spirlici.com>
  */
 class View {
     

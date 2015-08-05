@@ -1,8 +1,11 @@
 <?php
 
 /**
- * Main class<br>
+ * Main class
+ * 
  * From this class will be extended `Controller` and `Model` classes
+ * 
+ * @author  Sergiu Pirlici      <www.spirlici.com>
  */
 class MainClass {
     
