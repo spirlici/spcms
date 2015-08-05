@@ -18,6 +18,21 @@ class MainClass {
      */
     public function loadModel($name) {
         
+        $model = strtolower($name);
+        
+        // Check if controller exists
+        if(is_file($file = APPDIR.'models'.DS.$model.'.model.php')) {
+            include_once($file);
+            $model = ucfirst($model);
+            if(class_exists($model)) {
+                
+                $model = new $model;
+            }
+            else {
+                throw new Exception('Could not find model "'.ucfirst($model).'"');
+            }
+        }
+        
         return $model;
     }
     

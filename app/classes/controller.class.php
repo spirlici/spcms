@@ -27,23 +27,30 @@ class Controller extends MainClass {
                 header('Content-type: application/json; charset=UTF-8');
                 
                 // send json for ajax requests
-                $response = json_encode($data);
+                $response = is_string($data) ? $data : json_encode($data);
             }
             else {
 
                 header('Content-type: text/html; charset=UTF-8');
+                if(is_string($data)) {
+                    $response = $data;
+                }
+                else {
+                    // pass data to Smarty
+                    $smarty = $this->smarty();
+                    $data['user'] = $this->user;
+                    if($data) 
+                    foreach($data as $k => $v) {
+                        $smarty->assign($k, $v);
+                    }
+                    $layout = $this->layout;
+                    $view = $view.'.tpl';
+                    if($layout) {
+                        $view = 'extends:'.$layout.'.tpl|'.$view;
+                    }
+                    $response = $smarty->fetch($view);
+                }
                 
-                // pass data to Smarty
-                $smarty = $this->smarty();
-                foreach($data as $k => $v) {
-                    $smarty->assign($k, $v);
-                }
-                $layout = $this->layout;
-                $view = $view.'.tpl';
-                if($layout) {
-                    $view = 'extends:'.$layout.'.tpl|'.$view;
-                }
-                $response = $smarty->fetch($view);
             }
             
             // display the response

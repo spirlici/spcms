@@ -58,10 +58,10 @@ class App {
                 
                 $ret = call_user_func_array(array($controller, $method), $params);
                 
-                if($ret) {
+                // if($ret) {
                     $view = $file.'/'.$method;
                     return $controller->makeResponse($ret, $view);
-                }
+                // }
             }
             else {
                 $ret = call_user_func_array(array('Error404', 'index'), array(array('controller' => $controller, 'method' => $method, 'params' => $params)));

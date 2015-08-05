@@ -9,4 +9,23 @@
  */
 class User extends Model {
     
+    /**
+     * Check if a user is logged in
+     */
+    public function is_log(){
+        $logged = false;
+        
+        return $logged;
+    }
+    
+    /**
+     * Register an user
+     * 
+     * @param   array   $data   User data
+     * 
+     * @return boolean
+     */
+    public function register($data){
+        
+    }
 }
