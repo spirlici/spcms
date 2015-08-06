@@ -56,7 +56,6 @@ class App {
             if(class_exists($controller)) {
                 
                 $controller = new $controller;
-                
                 $ret = call_user_func_array(array($controller, $method), $params);
                 
                 // if($ret) {

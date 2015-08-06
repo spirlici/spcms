@@ -3,6 +3,9 @@
         Welcome!
     </h1>
     <h2>
-        This is a mini CMS for demonstration!
+        A simple CMS!
+    </h2>
+    <h2>
+        The main purpose of this mini CMS is for demonstration and practice!
     </h2>
 {/block}

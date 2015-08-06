@@ -10,6 +10,11 @@
 class MainClass {
     
     /**
+     * @var     Db      $db     Database connection
+     */
+    public static $db;
+    
+    /**
      * Load a model<br>
      * This function will load an model and return an instance of this model
      * 
@@ -17,23 +22,28 @@ class MainClass {
      * @return  mixed               Model Instance 
      */
     public function loadModel($name) {
+            
+        static $loaded_models;
         
-        $model = strtolower($name);
-        
-        // Check if controller exists
-        if(is_file($file = APPDIR.'models'.DS.$model.'.model.php')) {
-            include_once($file);
-            $model = ucfirst($model);
-            if(class_exists($model)) {
-                
-                $model = new $model;
+        if(empty($loaded_models[$name])) {
+            $model = strtolower($name);
+            
+            // Check if controller exists
+            if(is_file($file = APPDIR.'models'.DS.$model.'.model.php')) {
+                include_once($file);
+                $model = ucfirst($model);
+                if(class_exists($model)) {
+                    
+                    $model = new $model;
+                }
+                else {
+                    throw new Exception('Could not find model "'.ucfirst($model).'"');
+                }
             }
-            else {
-                throw new Exception('Could not find model "'.ucfirst($model).'"');
-            }
+            $loaded_models[$name] = $model;
         }
         
-        return $model;
+        return $loaded_models[$name];
     }
     
     /**
@@ -56,8 +66,23 @@ class MainClass {
      * @return  Mixed;
      */
     public function db(){
-        
-        return $db;
+        if(!self::$db) {
+            self::$db = new Db($this->config('db'));
+            self::$db->connect();
+        }
+        return self::$db;
     }
 
+    /**
+     * Return an config item
+     * 
+     * @param   string  $name   name of the item
+     */
+    public function config($name){
+        static $config;
+        if(!$config) {
+            $config = new Config();
+        }
+        return $config->get($name);
+    }
 }

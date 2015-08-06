@@ -28,4 +28,23 @@ class User extends Model {
     public function register($data){
         
     }
+    
+    /**
+     * Check if an user with the given email exists
+     * 
+     * If the user doesn't exist then `false` is returned
+     * 
+     * @param   string      $email  Email
+     * @return  mixed
+     */
+    public function getByEmail($email){
+        $ret = $this->db()
+            ->select('*')
+            ->from('user')
+            ->where(array('email' => $email))
+            ->get_first()
+        ;
+        return $ret;
+    }
+    
 }

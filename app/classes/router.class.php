@@ -42,7 +42,7 @@ class Router {
             $uri = trim($uri, '/');
             $uri = explode('/', $uri);
             $controller = $uri[0];
-            $method = $uri[1];
+            $method = !empty($uri[1]) ? $uri[1] : 'index';
         }
         
         if($found) {

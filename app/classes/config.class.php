@@ -41,7 +41,6 @@ class Config {
             if(count($name)>1) {
                 $itemname = $name[1];
             }
-            
             if($filename) {
                 if(!($config = $this->config[$filename])) {
                     

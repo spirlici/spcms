@@ -20,10 +20,14 @@
                 padding: 5px 0;
                 border-bottom: 1px solid #AAA;
             }
+            .errors {
+                color: red;
+            }
         </style>
     </head>
     <body>
     <div class="navbar">
+        <a href="/">Home</a>&nbsp;|&nbsp;
         {if not $user->is_log()}
             <a href="/user/login">Log In</a>
             &nbsp;|&nbsp;
