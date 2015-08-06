@@ -65,7 +65,7 @@ class Controller extends MainClass {
     public function is_ajax(){
         $is_ajax = false;
         
-        if($_GET['__is_ajax']) {
+        if(!empty($_GET['__is_ajax'])) {
             $is_ajax = true;
         }
         

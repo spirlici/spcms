@@ -1,6 +1,10 @@
 <html>
     <head>
         <style>
+            body, html{
+                padding: none;
+                margin: 10px;
+            }
             button,
             input[type=text],
             input[type=password]
@@ -11,6 +15,10 @@
             }
             .form-group {
                 padding-bottom: 20px;
+            }
+            .navbar {
+                padding: 5px 0;
+                border-bottom: 1px solid #AAA;
             }
         </style>
     </head>

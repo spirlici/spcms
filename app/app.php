@@ -27,6 +27,7 @@ class App {
         
         $uri = explode('?', $_SERVER['REQUEST_URI']);
         $uri = reset($uri);
+        
         $action = $router->parse($uri);
         
         if($action) {
