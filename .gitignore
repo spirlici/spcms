@@ -4,3 +4,4 @@
 /app/config
 /vendor/
 /templates_c/
+/error.log
