@@ -11,3 +11,6 @@ Run command
 Open spcms and run command the composer to install dependencies
 
 `composer install`
+
+Make a copy of `config.sample` folder and rename it to `config`, and then setup your configuration
+
