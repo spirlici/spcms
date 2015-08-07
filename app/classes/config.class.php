@@ -42,7 +42,7 @@ class Config {
                 $itemname = $name[1];
             }
             if($filename) {
-                if(!($config = $this->config[$filename])) {
+                if(empty($this->config[$filename])) {
                     
                     $fn = CONFIGDIR.$filename.$this->cfg_ext;
                     // include the configuration file and store the result in $this->config property
