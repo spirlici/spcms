@@ -24,6 +24,8 @@ class App {
         ini_set('session.cookie_httponly', 1);
         
         $config = new Config();
+
+        mb_internal_encoding($config->get('app.charset'));
         
         $router = new Router($config->get('routes'));
         

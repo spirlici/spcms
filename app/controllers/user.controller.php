@@ -99,6 +99,7 @@ class UserController extends Controller {
                 $id = $this->user->getByEmail($data['email']);
                 if(!$id) {
                     $this->user->register($data);
+                    $this->redirect->to('/user/login');
                 }
                 else {
                     if($id === false) throw new Exception('An error occured');

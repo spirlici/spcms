@@ -15,8 +15,8 @@ return array(
     'host' => 'localhost',
     
     // Database name
-    'name' => '',
+    'name' => 'spcms',
     
     // Default database charset
-    'charset' => '',
+    'charset' => 'utf8',
 );

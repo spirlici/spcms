@@ -24,7 +24,14 @@ class User extends Model {
      */
     public function is_log(){
             
-        $logged = (int)$this->session->userID;
+        if($logged = (int)$this->session->userID) {
+            if(!$this->db()->select('id')->from('user')->where(array('id' => $this->session->userID))->get_first()) {
+                $logged = false;
+                unset($this->session->userID);
+            }
+        }
+
+        // var_export($this->db()->last_query);
         
         return $logged;
     }
@@ -87,7 +94,7 @@ class User extends Model {
             }
         }
         
-        return $ret;
+        return $id;
     }
     
     /**
@@ -162,10 +169,11 @@ class User extends Model {
     public function get($name = NULL){
 
         if($this->is_log() && !$this->_data) {
+            $userID = $this->is_log();
             $this->_data = $this->db()
-                ->select('id, name, email')
+                ->select('id,name,email')
                 ->from('user')
-                ->where(array('id' => $this->is_log()))
+                ->where(array('id' => $userID))
                 ->get_first()
             ;
         }

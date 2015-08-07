@@ -54,19 +54,22 @@ class Db {
      */
     public function select($columns){
         $this->query_type = 'SELECT';
-        
+
         if(is_string($columns)) {
             $columns = explode(',', $columns);
         }
         elseif(is_array($columns)) {
             foreach($columns as $k => &$v) {
                 if(is_string($k)) {
-                    $v = $k.' AS '.$v;
+                    $v = trim($k).' AS '.trim($v);
                 }
             }
             unset($v);
         }
-        $this->select_columns = array_unique(array_merge((array)$this->select_columns, array_values($columns)));
+        if(!isset($this->select_columns)) {
+            $this->select_columns = array();
+        }
+        $this->select_columns = array_unique(array_merge($this->select_columns, array_values($columns)));
         foreach($this->select_columns as &$v) {
             $v = $this->esc($v, false);
         }
@@ -158,6 +161,8 @@ class Db {
      */
     public function get_first($field = NULL) {
         $ret = $this->get_rows();
+        if($ret==false) {
+        }
         $ret = reset($ret);
         return $field ? $ret[$field] : $ret;
     }
@@ -172,10 +177,12 @@ class Db {
             while($row = $result->fetch_assoc()) {
                 $ret[] = $row;
             }
+            
         }
         else {
             $ret = false;
         }
+
         return $ret;
     }
     
@@ -209,6 +216,9 @@ class Db {
         if ($this->mysqli->connect_errno) {
             printf("Connect failed: %s\n", $this->mysqli->connect_error);
             exit();
+        }
+        if($this->config['charset']) {
+            $this->mysqli->set_charset($this->config['charset']);
         }
         return $this;
     }

@@ -30,6 +30,11 @@ class MainClass {
     public static $session;
     
     /**
+     * @var     array
+     */
+    protected $_data;
+    
+    /**
      * Load a model<br>
      * This function will load an model and return an instance of this model
      * 
@@ -73,10 +78,9 @@ class MainClass {
             if(class_exists($name, true)) {
                 $class = new $name;
             }
-            self::$loaded_models[$name] = $class;
+            self::$loaded_classes[$name] = $class;
         }
-        
-        return self::$loaded_models[$name];
+        return self::$loaded_classes[$name];
     }
     
     /**
