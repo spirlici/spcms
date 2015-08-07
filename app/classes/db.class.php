@@ -74,6 +74,43 @@ class Db {
     }
     
     /**
+     * Insert `$data` into the table `$table`.
+     * 
+     * If `$insert_id` parameter is specifyed and is true then `last_insert_id` will be returned;
+     * 
+     * @param   array   $data       Data to be inserted
+     * @param   string  $table      Table name
+     * @param   bool    $insert_id  Return last insert id or not
+     */
+    public function insert($data, $table, $insert_id = true){
+        $sql = 'INSERT INTO '.$this->esc($table, "`");
+        foreach($data as $field => $value) {
+            $columns[] = $this->esc($field, '`');
+            $values[]  = $this->esc($value);
+        }
+        $sql .= ' ('.implode(',', $columns).')';
+        $sql .= ' VALUES ('.implode(',', $values).')';
+        
+        if($ret = $this->query($sql)) {
+            if($insert_id) $ret = $this->mysqli->insert_id;
+        }
+        else {
+            $this->error();
+        }
+        return $ret;
+    }
+    
+    /**
+     * Throw an error
+     * 
+     * @param   string  $msg    Error message
+     */
+    public function error($msg = ''){
+        $msg and $msg .= ':';
+        throw new Exception($msg . $this->last_error);
+    }
+    
+    /**
      * Set from table
      * 
      * @param   string  $table  Table
@@ -97,10 +134,10 @@ class Db {
                 if(is_string($key)) {
                     if(is_array($val)) {
                         foreach($val as &$v) if(!is_numeric($v)) $v = $this->esc($v);
-                        $this->where_clause[] = $this->esc($k, false) . 'IN ('.implode(',', $val).')';
+                        $this->where_clause[] = $this->esc($key, false) . 'IN ('.implode(',', $val).')';
                     }
                     else {
-                        $this->where_clause[] = $this->esc($k, false).'='.(is_numeric($val) ? $val : $this->esc($val));
+                        $this->where_clause[] = $this->esc($key, false).'='.(is_numeric($val) ? $val : $this->esc($val));
                     }
                 }
                 else {
@@ -132,7 +169,7 @@ class Db {
         
         if($result = $this->query($this->query_str())) { 
             $ret = array();
-            while($result->fetch_assoc()) {
+            while($row = $result->fetch_assoc()) {
                 $ret[] = $row;
             }
         }
@@ -149,8 +186,8 @@ class Db {
         $sql = $this->query_type;
         $sql .= ' '.($this->select_columns ? implode(',', $this->select_columns) : '*');
         $sql .= ' FROM '. $this->from_table;
-        if($this->where) {
-            $sql .= ' WHERE ('.implode(') AND (', $this->where).')';
+        if($this->where_clause) {
+            $sql .= ' WHERE ('.implode(') AND (', $this->where_clause).')';
         }
         return $sql;
     }
@@ -182,28 +219,32 @@ class Db {
      * @param  string   $query  The query
      */
     public function query($query){
-        $this->last_query = $query;
         $this->clear();
         $result = $this->mysqli->query($query);
         if(!$result) {
             $this->last_error = $this->mysqli->error;
         }
+        else {
+            $this->last_error = false;
+        }
+        $this->last_query = $query;
         return $result;
     }
     
     /**
      * Escapes special characters in a string for use in an SQL statement
      * 
-     * @param   string   $value  Value to be escaped
-     * @param   
+     * @param   string  $value              Value to be escaped
+     * @param   mixed   $with_aphostrophe   
      * @return  string
      */
-    public function esc($value, $with_aphostrophe = true){
+    public function esc($value, $with_aphostrophe = "'"){
         
         // To avoid sql injection
         $value = $this->mysqli->real_escape_string($value);
-        
-        if($with_aphostrophe) $value = "'$value'";
+        // If `$with_aphostrophe` parameter is specified and it is string then use it
+        $a = $with_aphostrophe ? is_string($with_aphostrophe) ? $with_aphostrophe : "'" : '';
+        if($with_aphostrophe) $value = $a.$value.$a;
         
         return $value;
     }

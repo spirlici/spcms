@@ -21,6 +21,8 @@ class App {
      */
     public function run() {
         
+        ini_set('session.cookie_httponly', 1);
+        
         $config = new Config();
         
         $router = new Router($config->get('routes'));

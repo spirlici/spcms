@@ -79,6 +79,9 @@ class Controller extends MainClass {
         static $smarty;
         if(!$smarty) {
             $smarty = new Smarty();
+            
+            $smarty->error_reporting = E_ALL & ~E_NOTICE;
+            
             $smarty->setTemplateDir(APPDIR.'views'.DS);
         }
         return $smarty;

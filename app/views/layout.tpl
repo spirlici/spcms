@@ -9,7 +9,7 @@
             input[type=text],
             input[type=password]
             {
-                border-radius: 5px; 
+                border-radius: 3px; 
                 padding: 5px;
                 border: 1px solid #bbb;
             }
@@ -33,7 +33,9 @@
             &nbsp;|&nbsp;
             <a href="/user/signup">Sign Up</a>
         {else}
-            <a href="/user/profile">Profile</a>
+            <a href="/user/profile">Profile( {$user->get('name')} )</a>
+            &nbsp;|&nbsp;
+            <a href="/user/logout">Logout</a>
         {/if}
         &nbsp;|&nbsp;
         <a href="https://github.com/spirlici/spcms" target="_blank">GitHub</a>

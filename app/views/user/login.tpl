@@ -1,9 +1,19 @@
 {block name="main_content"}
     <h1>Log In</h1>
-    <form action="/user/signup" method="post">
+    
+    {if $errors}
+        <h3 class="errors">You have some errors!</h3>
+        <ol class="errors">
+            {foreach $errors as $error}
+                <li>{$error}</li>
+            {/foreach}
+        </ol>
+    {/if}
+    
+    <form action="/user/login" method="POST">
         <div class="form-group">
-            Username:<br>
-            <input type="text" name="username" placeholder="Username" />
+            Email:<br>
+            <input type="text" name="email" placeholder="Email" />
         </div>
         
         <div class="form-group">

@@ -10,9 +10,24 @@
 class MainClass {
     
     /**
-     * @var     Db      $db     Database connection
+     * @var     Db      $db                 Database connection
      */
     public static $db;
+    
+    /**
+     * @var     mixed   $loaded_models      Cache instances of loaded models to be used was a singletone
+     */
+    public static $loaded_models;
+    
+    /**
+     * @var     mixed   $loaded_classes     Cache instances of loaded classes to be used was a singletone
+     */
+    public static $loaded_classes;
+    
+    /**
+     * @var     Session $session            Cache instances of loaded models to be used was a singletone
+     */
+    public static $session;
     
     /**
      * Load a model<br>
@@ -22,10 +37,8 @@ class MainClass {
      * @return  mixed               Model Instance 
      */
     public function loadModel($name) {
-            
-        static $loaded_models;
         
-        if(empty($loaded_models[$name])) {
+        if(empty(self::$loaded_models[$name])) {
             $model = strtolower($name);
             
             // Check if controller exists
@@ -39,11 +52,31 @@ class MainClass {
                 else {
                     throw new Exception('Could not find model "'.ucfirst($model).'"');
                 }
+                self::$loaded_models[$name] = $model;
             }
-            $loaded_models[$name] = $model;
         }
         
-        return $loaded_models[$name];
+        return !empty(self::$loaded_models[$name]) ? self::$loaded_models[$name] : false;
+    }
+
+    /**
+     * Load a class
+     * 
+     * This function will load an class and return an instance of this clss
+     * 
+     * @param   string  $model      Class name
+     * @return  mixed               Class Instance 
+     */
+    public function loadClass($name) {
+        
+        if(empty(self::$loaded_classes[$name])) {
+            if(class_exists($name, true)) {
+                $class = new $name;
+            }
+            self::$loaded_models[$name] = $class;
+        }
+        
+        return self::$loaded_models[$name];
     }
     
     /**
@@ -55,7 +88,10 @@ class MainClass {
      * @return  mixed
      */
     public function __get($name){
-        return $this->loadModel($name);
+        if((!$ret = $this->loadModel($name))) {
+            $ret = $this->loadClass($name);
+        }
+        return $ret;
     }
     
     /**
