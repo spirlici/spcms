@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Class MainClass</title>
+	<title>Class MVC</title>
 
 	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
 
@@ -28,8 +28,8 @@
 				<li><a href="class-Controller.html">Controller</a></li>
 				<li><a href="class-Db.html">Db</a></li>
 				<li><a href="class-HomeController.html">HomeController</a></li>
-				<li class="active"><a href="class-MainClass.html">MainClass</a></li>
 				<li><a href="class-Model.html">Model</a></li>
+				<li class="active"><a href="class-MVC.html">MVC</a></li>
 				<li><a href="class-Redirect.html">Redirect</a></li>
 				<li><a href="class-Router.html">Router</a></li>
 				<li><a href="class-Session.html">Session</a></li>
@@ -71,13 +71,13 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class MainClass</h1>
+	<h1>Class MVC</h1>
 
 
 	<div class="description">
-	<p>Main class</p>
+	<p>MVC class</p>
 
-<p>From this class will be extended <code>Controller</code> and <code>Model</code> classes</p>
+<p>From this class will be extended <code>Model</code>, <code>View</code> and <code>Controller</code> classes</p>
 	</div>
 
 
@@ -85,7 +85,8 @@
 	<div>
 		<h4>Direct known subclasses</h4>
 			<a href="class-Controller.html">Controller</a>, 
-			<a href="class-Model.html">Model</a>
+			<a href="class-Model.html">Model</a>, 
+			<a href="class-View.html">View</a>
 	</div>
 
 	<div>
@@ -106,8 +107,8 @@
 		
 
 				<b>Author:</b>
-				Sergiu Pirlici      &lt;www.spirlici.com><br>
-			<b>Located at</b> <a href="source-class-MainClass.html#3-124" title="Go to source code">classes/mainclass.class.php</a>
+				<a href="http://www.spirlici.com">Sergiu Pirlici</a><br>
+			<b>Located at</b> <a href="source-class-MVC.html#3-128" title="Go to source code">classes/mvc.class.php</a>
 		<br>
 	</div>
 
@@ -127,7 +128,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_loadModel">#</a>
-		<code><a href="source-class-MainClass.html#32-60" title="Go to source code">loadModel</a>( <span>string <var>$name</var></span> )</code>
+		<code><a href="source-class-MVC.html#37-65" title="Go to source code">loadModel</a>( <span>string <var>$name</var></span> )</code>
 
 		<div class="description short">
 			<p>Load a model<br>
@@ -168,7 +169,7 @@ This function will load an model and return an instance of this model</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_loadClass">#</a>
-		<code><a href="source-class-MainClass.html#62-80" title="Go to source code">loadClass</a>( <span>string <var>$name</var></span> )</code>
+		<code><a href="source-class-MVC.html#67-84" title="Go to source code">loadClass</a>( <span>string <var>$name</var></span> )</code>
 
 		<div class="description short">
 			<p>Load a class</p>
@@ -209,7 +210,7 @@ This function will load an model and return an instance of this model</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#___get">#</a>
-		<code><a href="source-class-MainClass.html#82-95" title="Go to source code">__get</a>( <span>string <var>$name</var></span> )</code>
+		<code><a href="source-class-MVC.html#86-99" title="Go to source code">__get</a>( <span>string <var>$name</var></span> )</code>
 
 		<div class="description short">
 			<p>Getter function<br>
@@ -252,7 +253,7 @@ So on our Models and Controllers we will be able to call <code>$this-&gt;ModelNa
 
 		<td class="name"><div>
 		<a class="anchor" href="#_db">#</a>
-		<code><a href="source-class-MainClass.html#97-110" title="Go to source code">db</a>( )</code>
+		<code><a href="source-class-MVC.html#101-114" title="Go to source code">db</a>( )</code>
 
 		<div class="description short">
 			<p>Return an instance of Db Class
@@ -290,7 +291,7 @@ If connection to the database fails then <code>false</code> value will be return
 
 		<td class="name"><div>
 		<a class="anchor" href="#_config">#</a>
-		<code><a href="source-class-MainClass.html#112-123" title="Go to source code">config</a>( <span>string <var>$name</var></span> )</code>
+		<code><a href="source-class-MVC.html#116-127" title="Go to source code">config</a>( <span>string <var>$name</var></span> )</code>
 
 		<div class="description short">
 			<p>Return an config item</p>
@@ -335,7 +336,7 @@ If connection to the database fails then <code>false</code> value will be return
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-MainClass.html#12-15" title="Go to source code"><var>$db</var></a>
+				<a href="source-class-MVC.html#12-15" title="Go to source code"><var>$db</var></a>
 
 			<div class="description short">
 				<p>$db                 Database connection</p>
@@ -360,7 +361,7 @@ If connection to the database fails then <code>false</code> value will be return
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-MainClass.html#17-20" title="Go to source code"><var>$loaded_models</var></a>
+				<a href="source-class-MVC.html#17-20" title="Go to source code"><var>$loaded_models</var></a>
 
 			<div class="description short">
 				<p>$loaded_models      Cache instances of loaded models to be used was a singletone</p>
@@ -385,7 +386,7 @@ If connection to the database fails then <code>false</code> value will be return
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-MainClass.html#22-25" title="Go to source code"><var>$loaded_classes</var></a>
+				<a href="source-class-MVC.html#22-25" title="Go to source code"><var>$loaded_classes</var></a>
 
 			<div class="description short">
 				<p>$loaded_classes     Cache instances of loaded classes to be used was a singletone</p>
@@ -410,7 +411,7 @@ If connection to the database fails then <code>false</code> value will be return
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-MainClass.html#27-30" title="Go to source code"><var>$session</var></a>
+				<a href="source-class-MVC.html#27-30" title="Go to source code"><var>$session</var></a>
 
 			<div class="description short">
 				<p>$session            Cache instances of loaded models to be used was a singletone</p>
@@ -424,6 +425,31 @@ If connection to the database fails then <code>false</code> value will be return
 		<td class="value">
 			<div>
 				<a href="#$session" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="_data" id="$_data">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-MVC.html#32-35" title="Go to source code"><var>$_data</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$_data" class="anchor">#</a>
 				<code></code>
 			</div>
 		</td>
