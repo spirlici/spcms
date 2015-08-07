@@ -3,9 +3,9 @@
 /**
  * Main model
  * 
- * @author  Sergiu Pirlici      <www.spirlici.com>
+ * @author  [Sergiu Pirlici](http://www.spirlici.com)
  */
-class Model  extends MainClass {
+class Model  extends MVC {
     
     /**
      * @var  string     $table      Model's table name

@@ -5,9 +5,9 @@
  * 
  * Work with views
  * 
- * @author  Sergiu Pirlici      <www.spirlici.com>
+ * @author  [Sergiu Pirlici](http://www.spirlici.com)
  */
-class View {
+class View extends MVC {
     
     /**
      * Display a view

@@ -5,9 +5,9 @@
  * 
  * From this controller will be extended all controllers
  * 
- * @author  Sergiu Pirlici      <www.spirlici.com>
+ * @author  [Sergiu Pirlici](http://www.spirlici.com)
  */
-class Controller extends MainClass {
+class Controller extends MVC {
     
     /**
      * @var string  layout  Default layout for views

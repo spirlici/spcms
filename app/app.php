@@ -3,7 +3,7 @@
 /**
  * The application class
  * 
- * @author  Sergiu Pirlici      <www.spirlici.com>
+ * @author  [Sergiu Pirlici](http://www.spirlici.com)
  */
 class App {
     

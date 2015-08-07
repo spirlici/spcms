@@ -1,13 +1,13 @@
 <?php
 
 /**
- * Main class
+ * MVC class
  * 
- * From this class will be extended `Controller` and `Model` classes
+ * From this class will be extended `Model`, `View` and `Controller` classes
  * 
- * @author  Sergiu Pirlici      <www.spirlici.com>
+ * @author  [Sergiu Pirlici](http://www.spirlici.com)
  */
-class MainClass {
+class MVC {
     
     /**
      * @var     Db      $db                 Database connection

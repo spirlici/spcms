@@ -5,7 +5,7 @@
  * 
  * This class will care about authentication
  * 
- * @author  Sergiu Pirlici      <www.spirlici.com>
+ * @author  [Sergiu Pirlici](http://www.spirlici.com)
  */
 class User extends Model {
     
