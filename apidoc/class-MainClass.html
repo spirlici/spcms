@@ -24,12 +24,17 @@
 			<h3>Classes</h3>
 			<ul>
 				<li><a href="class-App.html">App</a></li>
+				<li><a href="class-Config.html">Config</a></li>
 				<li><a href="class-Controller.html">Controller</a></li>
 				<li><a href="class-Db.html">Db</a></li>
+				<li><a href="class-HomeController.html">HomeController</a></li>
 				<li class="active"><a href="class-MainClass.html">MainClass</a></li>
 				<li><a href="class-Model.html">Model</a></li>
+				<li><a href="class-Redirect.html">Redirect</a></li>
+				<li><a href="class-Router.html">Router</a></li>
 				<li><a href="class-Session.html">Session</a></li>
 				<li><a href="class-User.html">User</a></li>
+				<li><a href="class-UserController.html">UserController</a></li>
 				<li><a href="class-View.html">View</a></li>
 			</ul>
 
@@ -85,7 +90,9 @@
 
 	<div>
 		<h4>Indirect known subclasses</h4>
-			<a href="class-User.html">User</a>
+			<a href="class-HomeController.html">HomeController</a>, 
+			<a href="class-User.html">User</a>, 
+			<a href="class-UserController.html">UserController</a>
 	</div>
 
 
@@ -100,7 +107,7 @@
 
 				<b>Author:</b>
 				Sergiu Pirlici      &lt;www.spirlici.com><br>
-			<b>Located at</b> <a href="source-class-MainClass.html#3-47" title="Go to source code">classes/mainclass.php</a>
+			<b>Located at</b> <a href="source-class-MainClass.html#3-124" title="Go to source code">classes/mainclass.class.php</a>
 		<br>
 	</div>
 
@@ -120,7 +127,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_loadModel">#</a>
-		<code><a href="source-class-MainClass.html#12-22" title="Go to source code">loadModel</a>( <span>string <var>$name</var></span> )</code>
+		<code><a href="source-class-MainClass.html#32-60" title="Go to source code">loadModel</a>( <span>string <var>$name</var></span> )</code>
 
 		<div class="description short">
 			<p>Load a model<br>
@@ -149,6 +156,47 @@ This function will load an model and return an instance of this model</p>
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="loadClass" id="_loadClass">
+
+		<td class="attributes"><code>
+			 public 
+
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_loadClass">#</a>
+		<code><a href="source-class-MainClass.html#62-80" title="Go to source code">loadClass</a>( <span>string <var>$name</var></span> )</code>
+
+		<div class="description short">
+			<p>Load a class</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Load a class</p>
+
+<p>This function will load an class and return an instance of this clss</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd>$model      Class name</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					mixed<br>Class Instance
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="__get" id="___get">
 
 		<td class="attributes"><code>
@@ -161,7 +209,7 @@ This function will load an model and return an instance of this model</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#___get">#</a>
-		<code><a href="source-class-MainClass.html#24-34" title="Go to source code">__get</a>( <span>string <var>$name</var></span> )</code>
+		<code><a href="source-class-MainClass.html#82-95" title="Go to source code">__get</a>( <span>string <var>$name</var></span> )</code>
 
 		<div class="description short">
 			<p>Getter function<br>
@@ -204,7 +252,7 @@ So on our Models and Controllers we will be able to call <code>$this-&gt;ModelNa
 
 		<td class="name"><div>
 		<a class="anchor" href="#_db">#</a>
-		<code><a href="source-class-MainClass.html#36-46" title="Go to source code">db</a>( )</code>
+		<code><a href="source-class-MainClass.html#97-110" title="Go to source code">db</a>( )</code>
 
 		<div class="description short">
 			<p>Return an instance of Db Class
@@ -230,6 +278,41 @@ If connection to the database fails then <code>false</code> value will be return
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="config" id="_config">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_config">#</a>
+		<code><a href="source-class-MainClass.html#112-123" title="Go to source code">config</a>( <span>string <var>$name</var></span> )</code>
+
+		<div class="description short">
+			<p>Return an config item</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Return an config item</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd>name of the item</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	</table>
 
 
@@ -243,6 +326,109 @@ If connection to the database fails then <code>false</code> value will be return
 
 
 
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="db" id="$db">
+		<td class="attributes"><code>
+			public static 
+			<code><a href="class-Db.html">Db</a></code>
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-MainClass.html#12-15" title="Go to source code"><var>$db</var></a>
+
+			<div class="description short">
+				<p>$db                 Database connection</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>$db                 Database connection</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$db" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="loaded_models" id="$loaded_models">
+		<td class="attributes"><code>
+			public static 
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-MainClass.html#17-20" title="Go to source code"><var>$loaded_models</var></a>
+
+			<div class="description short">
+				<p>$loaded_models      Cache instances of loaded models to be used was a singletone</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>$loaded_models      Cache instances of loaded models to be used was a singletone</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$loaded_models" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="loaded_classes" id="$loaded_classes">
+		<td class="attributes"><code>
+			public static 
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-MainClass.html#22-25" title="Go to source code"><var>$loaded_classes</var></a>
+
+			<div class="description short">
+				<p>$loaded_classes     Cache instances of loaded classes to be used was a singletone</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>$loaded_classes     Cache instances of loaded classes to be used was a singletone</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$loaded_classes" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="session" id="$session">
+		<td class="attributes"><code>
+			public static 
+			<code><a href="class-Session.html">Session</a></code>
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-MainClass.html#27-30" title="Go to source code"><var>$session</var></a>
+
+			<div class="description short">
+				<p>$session            Cache instances of loaded models to be used was a singletone</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>$session            Cache instances of loaded models to be used was a singletone</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$session" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	</table>
 
 
 

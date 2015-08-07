@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Class App</title>
+	<title>Class Router</title>
 
 	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
 
@@ -23,7 +23,7 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li class="active"><a href="class-App.html">App</a></li>
+				<li><a href="class-App.html">App</a></li>
 				<li><a href="class-Config.html">Config</a></li>
 				<li><a href="class-Controller.html">Controller</a></li>
 				<li><a href="class-Db.html">Db</a></li>
@@ -31,7 +31,7 @@
 				<li><a href="class-MainClass.html">MainClass</a></li>
 				<li><a href="class-Model.html">Model</a></li>
 				<li><a href="class-Redirect.html">Redirect</a></li>
-				<li><a href="class-Router.html">Router</a></li>
+				<li class="active"><a href="class-Router.html">Router</a></li>
 				<li><a href="class-Session.html">Session</a></li>
 				<li><a href="class-User.html">User</a></li>
 				<li><a href="class-UserController.html">UserController</a></li>
@@ -71,11 +71,11 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class App</h1>
+	<h1>Class Router</h1>
 
 
 	<div class="description">
-	<p>The application class</p>
+	<p>Take care of routes</p>
 	</div>
 
 
@@ -93,8 +93,8 @@
 		
 
 				<b>Author:</b>
-				Sergiu Pirlici      &lt;www.spirlici.com><br>
-			<b>Located at</b> <a href="source-class-App.html#3-93" title="Go to source code">app.php</a>
+				<a href="www.spirlici.com">Sergiu Pirlici</a><br>
+			<b>Located at</b> <a href="source-class-Router.html#3-101" title="Go to source code">classes/router.class.php</a>
 		<br>
 	</div>
 
@@ -114,7 +114,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-App.html#10-17" title="Go to source code">__construct</a>( )</code>
+		<code><a href="source-class-Router.html#15-22" title="Go to source code">__construct</a>( <span>array <var>$routes</var> = <span class="php-keyword1">NULL</span></span> )</code>
 
 		<div class="description short">
 			<p>Class constructor</p>
@@ -122,83 +122,54 @@
 
 		<div class="description detailed hidden">
 			<p>Class constructor</p>
-
-<p>Registers class autoloading</p>
-
-
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="run" id="_run">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_run">#</a>
-		<code><a href="source-class-App.html#19-40" title="Go to source code">run</a>( )</code>
-
-		<div class="description short">
-			<p>Run the application</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Run the application</p>
-
-
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="runController" id="_runController">
-
-		<td class="attributes"><code>
-			 public 
-
-			mixed
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_runController">#</a>
-		<code><a href="source-class-App.html#42-72" title="Go to source code">runController</a>( <span>string <var>$controller</var></span>, <span>string <var>$method</var> = <span class="php-quote">'index'</span></span>, <span>array <var>$params</var> = <span class="php-keyword1">array</span>()</span> )</code>
-
-		<div class="description short">
-			<p>Run a controller</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Run a controller</p>
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$controller</var></dt>
-					<dd>Controller name</dd>
-					<dt><var>$method</var></dt>
-					<dd>Method name</dd>
-					<dt><var>$params</var></dt>
-					<dd>Params to be passed to the controller's method</dd>
+					<dt><var>$routes</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="parse" id="_parse">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_parse">#</a>
+		<code><a href="source-class-Router.html#24-70" title="Go to source code">parse</a>( <span>string <var>$uri</var></span> )</code>
+
+		<div class="description short">
+			<p>Parse <code>$uri</code> parameter and return an array with 2 values</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Parse <code>$uri</code> parameter and return an array with 2 values</p>
+
+<p>E.g. <code>array('controller' =&gt; 'controller_name', 'method' =&gt; 'method_name');</code></p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$uri</var></dt>
+					<dd>Uri</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					mixed
+					array
 				</div>
 
 
@@ -207,7 +178,7 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="registerAutoload" id="_registerAutoload">
+	<tr data-order="match" id="_match">
 
 		<td class="attributes"><code>
 			 public 
@@ -218,18 +189,29 @@
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_registerAutoload">#</a>
-		<code><a href="source-class-App.html#74-92" title="Go to source code">registerAutoload</a>( )</code>
+		<a class="anchor" href="#_match">#</a>
+		<code><a href="source-class-Router.html#72-100" title="Go to source code">match</a>( <span>string <var>$uri</var></span>, <span>array <var>$routes</var> = <span class="php-keyword1">NULL</span></span> )</code>
 
 		<div class="description short">
-			<p>Register autoloading for classes</p>
+			<p>Verify if an uri matches a route defined in self::$routes;</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>Register autoloading for classes</p>
+			<p>Verify if an uri matches a route defined in self::$routes;</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$uri</var></dt>
+					<dd></dd>
+					<dt><var>$routes</var></dt>
+					<dd></dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					
+				</div>
 
 
 
@@ -250,6 +232,34 @@
 
 
 
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="routes" id="$routes">
+		<td class="attributes"><code>
+			protected  
+			
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Router.html#10-13" title="Go to source code"><var>$routes</var></a>
+
+			<div class="description short">
+				<p>User defined routes</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>User defined routes</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$routes" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	</table>
 
 
 

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Class Model</title>
+	<title>Class HomeController</title>
 
 	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
 
@@ -27,9 +27,9 @@
 				<li><a href="class-Config.html">Config</a></li>
 				<li><a href="class-Controller.html">Controller</a></li>
 				<li><a href="class-Db.html">Db</a></li>
-				<li><a href="class-HomeController.html">HomeController</a></li>
+				<li class="active"><a href="class-HomeController.html">HomeController</a></li>
 				<li><a href="class-MainClass.html">MainClass</a></li>
-				<li class="active"><a href="class-Model.html">Model</a></li>
+				<li><a href="class-Model.html">Model</a></li>
 				<li><a href="class-Redirect.html">Redirect</a></li>
 				<li><a href="class-Router.html">Router</a></li>
 				<li><a href="class-Session.html">Session</a></li>
@@ -71,11 +71,11 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class Model</h1>
+	<h1>Class HomeController</h1>
 
 
 	<div class="description">
-	<p>Main model</p>
+	<p>Home page controller</p>
 	</div>
 
 	<dl class="tree">
@@ -87,17 +87,20 @@
 		</dd>
 		<dd style="padding-left:30px">
 			<img src="resources/inherit.png" alt="Extended by">
-<b><span>Model</span></b>			
+			<a href="class-Controller.html"><span>Controller</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:60px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>HomeController</span></b>			
 			
 			
 		</dd>
 	</dl>
 
 
-	<div>
-		<h4>Direct known subclasses</h4>
-			<a href="class-User.html">User</a>
-	</div>
 
 
 
@@ -110,15 +113,56 @@
 		
 		
 
-				<b>Author:</b>
-				Sergiu Pirlici      &lt;www.spirlici.com><br>
-			<b>Located at</b> <a href="source-class-Model.html#3-19" title="Go to source code">classes/model.class.php</a>
+			<b>Located at</b> <a href="source-class-HomeController.html#3-14" title="Go to source code">controllers/home.controller.php</a>
 		<br>
 	</div>
 
 
 
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="index" id="_index">
 
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_index">#</a>
+		<code><a href="source-class-HomeController.html#8-13" title="Go to source code">index</a>( )</code>
+
+		<div class="description short">
+			<p>Default method</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Default method</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-Controller.html#methods">Controller</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Controller.html#_is_ajax">is_ajax()</a>, 
+			<a href="class-Controller.html#_makeResponse">makeResponse()</a>, 
+			<a href="class-Controller.html#_smarty">smarty()</a>
+		</code></td>
+	</tr>
+	</table>
 	<table class="summary inherited">
 	<caption>Methods inherited from <a href="class-MainClass.html#methods">MainClass</a></caption>
 	<tr>
@@ -142,60 +186,15 @@
 
 
 
-	<table class="summary properties" id="properties">
-	<caption>Properties summary</caption>
-	<tr data-order="table" id="$table">
-		<td class="attributes"><code>
-			protected  
-			string
+
+	<table class="summary inherited">
+	<caption>Properties inherited from <a href="class-Controller.html#properties">Controller</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Controller.html#$layout"><var>$layout</var></a>
 		</code></td>
-
-		<td class="name">
-				<a href="source-class-Model.html#10-13" title="Go to source code"><var>$table</var></a>
-
-			<div class="description short">
-				<p>$table      Model's table name</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>$table      Model's table name</p>
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$table" class="anchor">#</a>
-				<code><span class="php-keyword1">NULL</span></code>
-			</div>
-		</td>
-	</tr>
-	<tr data-order="pk" id="$pk">
-		<td class="attributes"><code>
-			protected  
-			string
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Model.html#15-18" title="Go to source code"><var>$pk</var></a>
-
-			<div class="description short">
-				<p>$table      Model's primary key</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>$table      Model's primary key</p>
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$pk" class="anchor">#</a>
-				<code><span class="php-keyword1">NULL</span></code>
-			</div>
-		</td>
 	</tr>
 	</table>
-
 	<table class="summary inherited">
 	<caption>Properties inherited from <a href="class-MainClass.html#properties">MainClass</a></caption>
 	<tr>

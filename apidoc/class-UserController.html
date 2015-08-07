@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Class Controller</title>
+	<title>Class UserController</title>
 
 	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
 
@@ -25,7 +25,7 @@
 			<ul>
 				<li><a href="class-App.html">App</a></li>
 				<li><a href="class-Config.html">Config</a></li>
-				<li class="active"><a href="class-Controller.html">Controller</a></li>
+				<li><a href="class-Controller.html">Controller</a></li>
 				<li><a href="class-Db.html">Db</a></li>
 				<li><a href="class-HomeController.html">HomeController</a></li>
 				<li><a href="class-MainClass.html">MainClass</a></li>
@@ -34,7 +34,7 @@
 				<li><a href="class-Router.html">Router</a></li>
 				<li><a href="class-Session.html">Session</a></li>
 				<li><a href="class-User.html">User</a></li>
-				<li><a href="class-UserController.html">UserController</a></li>
+				<li class="active"><a href="class-UserController.html">UserController</a></li>
 				<li><a href="class-View.html">View</a></li>
 			</ul>
 
@@ -71,13 +71,11 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class Controller</h1>
+	<h1>Class UserController</h1>
 
 
 	<div class="description">
-	<p>Main controller</p>
-
-<p>From this controller will be extended all controllers</p>
+	<p>User controller</p>
 	</div>
 
 	<dl class="tree">
@@ -89,18 +87,20 @@
 		</dd>
 		<dd style="padding-left:30px">
 			<img src="resources/inherit.png" alt="Extended by">
-<b><span>Controller</span></b>			
+			<a href="class-Controller.html"><span>Controller</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:60px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>UserController</span></b>			
 			
 			
 		</dd>
 	</dl>
 
 
-	<div>
-		<h4>Direct known subclasses</h4>
-			<a href="class-HomeController.html">HomeController</a>, 
-			<a href="class-UserController.html">UserController</a>
-	</div>
 
 
 
@@ -114,8 +114,8 @@
 		
 
 				<b>Author:</b>
-				Sergiu Pirlici      &lt;www.spirlici.com><br>
-			<b>Located at</b> <a href="source-class-Controller.html#3-90" title="Go to source code">classes/controller.class.php</a>
+				<a href="www.spirlici.com">Sergiu Pirlici</a><br>
+			<b>Located at</b> <a href="source-class-UserController.html#3-124" title="Go to source code">controllers/user.controller.php</a>
 		<br>
 	</div>
 
@@ -123,7 +123,7 @@
 
 	<table class="summary methods" id="methods">
 	<caption>Methods summary</caption>
-	<tr data-order="makeResponse" id="_makeResponse">
+	<tr data-order="index" id="_index">
 
 		<td class="attributes"><code>
 			 public 
@@ -134,15 +134,17 @@
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_makeResponse">#</a>
-		<code><a href="source-class-Controller.html#17-60" title="Go to source code">makeResponse</a>( <span> <var>$data</var></span>, <span> <var>$view</var> = <span class="php-keyword1">NULL</span></span> )</code>
+		<a class="anchor" href="#_index">#</a>
+		<code><a href="source-class-UserController.html#10-22" title="Go to source code">index</a>( )</code>
 
 		<div class="description short">
-			<p>make response</p>
+			<p>Default method</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>make response</p>
+			<p>Default method</p>
+
+<p>Redirects to /user/login if user is not logged in and to /user/profile if user is logged in</p>
 
 
 
@@ -153,7 +155,7 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="is_ajax" id="_is_ajax">
+	<tr data-order="login" id="_login">
 
 		<td class="attributes"><code>
 			 public 
@@ -164,15 +166,15 @@
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_is_ajax">#</a>
-		<code><a href="source-class-Controller.html#62-73" title="Go to source code">is_ajax</a>( )</code>
+		<a class="anchor" href="#_login">#</a>
+		<code><a href="source-class-UserController.html#24-61" title="Go to source code">login</a>( )</code>
 
 		<div class="description short">
-			<p>Check if a request is made via AJAX or not</p>
+			<p>Display login form and try to login user on post requests</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>Check if a request is made via AJAX or not</p>
+			<p>Display login form and try to login user on post requests</p>
 
 
 
@@ -183,7 +185,7 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="smarty" id="_smarty">
+	<tr data-order="logout" id="_logout">
 
 		<td class="attributes"><code>
 			 public 
@@ -194,15 +196,75 @@
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_smarty">#</a>
-		<code><a href="source-class-Controller.html#75-88" title="Go to source code">smarty</a>( )</code>
+		<a class="anchor" href="#_logout">#</a>
+		<code><a href="source-class-UserController.html#63-69" title="Go to source code">logout</a>( )</code>
 
 		<div class="description short">
-			<p>Return an instance of Smarty class;</p>
+			<p>Logout</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>Return an instance of Smarty class;</p>
+			<p>Logout</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="signup" id="_signup">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_signup">#</a>
+		<code><a href="source-class-UserController.html#71-116" title="Go to source code">signup</a>( )</code>
+
+		<div class="description short">
+			<p>Displays signup form</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Displays signup form</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="profile" id="_profile">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_profile">#</a>
+		<code><a href="source-class-UserController.html#118-123" title="Go to source code">profile</a>( )</code>
+
+		<div class="description short">
+			<p>Show user profile</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Show user profile</p>
 
 
 
@@ -215,6 +277,16 @@
 	</tr>
 	</table>
 
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-Controller.html#methods">Controller</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Controller.html#_is_ajax">is_ajax()</a>, 
+			<a href="class-Controller.html#_makeResponse">makeResponse()</a>, 
+			<a href="class-Controller.html#_smarty">smarty()</a>
+		</code></td>
+	</tr>
+	</table>
 	<table class="summary inherited">
 	<caption>Methods inherited from <a href="class-MainClass.html#methods">MainClass</a></caption>
 	<tr>
@@ -238,35 +310,15 @@
 
 
 
-	<table class="summary properties" id="properties">
-	<caption>Properties summary</caption>
-	<tr data-order="layout" id="$layout">
-		<td class="attributes"><code>
-			public  
-			string
+
+	<table class="summary inherited">
+	<caption>Properties inherited from <a href="class-Controller.html#properties">Controller</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Controller.html#$layout"><var>$layout</var></a>
 		</code></td>
-
-		<td class="name">
-				<a href="source-class-Controller.html#12-15" title="Go to source code"><var>$layout</var></a>
-
-			<div class="description short">
-				<p>layout  Default layout for views</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>layout  Default layout for views</p>
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$layout" class="anchor">#</a>
-				<code><span class="php-quote">'layout'</span></code>
-			</div>
-		</td>
 	</tr>
 	</table>
-
 	<table class="summary inherited">
 	<caption>Properties inherited from <a href="class-MainClass.html#properties">MainClass</a></caption>
 	<tr>

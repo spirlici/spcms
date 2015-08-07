@@ -24,12 +24,17 @@
 			<h3>Classes</h3>
 			<ul>
 				<li><a href="class-App.html">App</a></li>
+				<li><a href="class-Config.html">Config</a></li>
 				<li><a href="class-Controller.html">Controller</a></li>
 				<li class="active"><a href="class-Db.html">Db</a></li>
+				<li><a href="class-HomeController.html">HomeController</a></li>
 				<li><a href="class-MainClass.html">MainClass</a></li>
 				<li><a href="class-Model.html">Model</a></li>
+				<li><a href="class-Redirect.html">Redirect</a></li>
+				<li><a href="class-Router.html">Router</a></li>
 				<li><a href="class-Session.html">Session</a></li>
 				<li><a href="class-User.html">User</a></li>
+				<li><a href="class-UserController.html">UserController</a></li>
 				<li><a href="class-View.html">View</a></li>
 			</ul>
 
@@ -88,13 +93,469 @@
 		
 
 				<b>Author:</b>
-				Sergiu Pirlici      &lt;www.spirlici.com><br>
-			<b>Located at</b> <a href="source-class-Db.html#3-10" title="Go to source code">classes/db.php</a>
+				<a href="www.spirlici.com">Sergiu Pirlici</a><br>
+			<b>Located at</b> <a href="source-class-Db.html#3-251" title="Go to source code">classes/db.class.php</a>
 		<br>
 	</div>
 
 
 
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Db.html#40-47" title="Go to source code">__construct</a>( <span>array <var>$config</var></span> )</code>
+
+		<div class="description short">
+			<p>Class Constructor</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Class Constructor</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$config</var></dt>
+					<dd>Database configuration</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="select" id="_select">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Db.html">Db</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_select">#</a>
+		<code><a href="source-class-Db.html#49-74" title="Go to source code">select</a>( <span>mixed <var>$columns</var></span> )</code>
+
+		<div class="description short">
+			<p>Set columns that must be selected from the table</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Set columns that must be selected from the table</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$columns</var></dt>
+					<dd>Columns</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Db.html">Db</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="insert" id="_insert">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_insert">#</a>
+		<code><a href="source-class-Db.html#76-101" title="Go to source code">insert</a>( <span>array <var>$data</var></span>, <span>string <var>$table</var></span>, <span>boolean <var>$insert_id</var> = <span class="php-keyword1">true</span></span> )</code>
+
+		<div class="description short">
+			<p>Insert <code>$data</code> into the table <code>$table</code>.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Insert <code>$data</code> into the table <code>$table</code>.</p>
+
+<p>If <code>$insert_id</code> parameter is specifyed and is true then <code>last_insert_id</code> will be returned;</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$data</var></dt>
+					<dd>Data to be inserted</dd>
+					<dt><var>$table</var></dt>
+					<dd>Table name</dd>
+					<dt><var>$insert_id</var></dt>
+					<dd>Return last insert id or not</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="error" id="_error">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_error">#</a>
+		<code><a href="source-class-Db.html#103-111" title="Go to source code">error</a>( <span>string <var>$msg</var> = <span class="php-quote">''</span></span> )</code>
+
+		<div class="description short">
+			<p>Throw an error</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Throw an error</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$msg</var></dt>
+					<dd>Error message</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="from" id="_from">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_from">#</a>
+		<code><a href="source-class-Db.html#113-121" title="Go to source code">from</a>( <span>string <var>$table</var></span> )</code>
+
+		<div class="description short">
+			<p>Set from table</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Set from table</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$table</var></dt>
+					<dd>Table</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="where" id="_where">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_where">#</a>
+		<code><a href="source-class-Db.html#123-150" title="Go to source code">where</a>( <span>mixed <var>$where</var></span> )</code>
+
+		<div class="description short">
+			<p>Set Where clause</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Set Where clause</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$where</var></dt>
+					<dd>Where clause</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_first" id="_get_first">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_first">#</a>
+		<code><a href="source-class-Db.html#152-163" title="Go to source code">get_first</a>( <span>string <var>$field</var> = <span class="php-keyword1">NULL</span></span> )</code>
+
+		<div class="description short">
+			<p>Select and return the first found item</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Select and return the first found item</p>
+
+<p>If <code>$field</code> param is specified then only the value of <code>$field</code> field will be returned</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$field</var></dt>
+					<dd>Field name</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_rows" id="_get_rows">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_rows">#</a>
+		<code><a href="source-class-Db.html#165-180" title="Go to source code">get_rows</a>( )</code>
+
+		<div class="description short">
+			<p>Select and return the items found</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Select and return the items found</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="query_str" id="_query_str">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_query_str">#</a>
+		<code><a href="source-class-Db.html#182-193" title="Go to source code">query_str</a>( )</code>
+
+		<div class="description short">
+			<p>Prepare the query string and return it</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Prepare the query string and return it</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="clear" id="_clear">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_clear">#</a>
+		<code><a href="source-class-Db.html#195-202" title="Go to source code">clear</a>( )</code>
+
+		<div class="description short">
+			<p>Clear the previous settings</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Clear the previous settings</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="connect" id="_connect">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_connect">#</a>
+		<code><a href="source-class-Db.html#204-214" title="Go to source code">connect</a>( )</code>
+
+		<div class="description short">
+			<p>Try to connect to the database</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Try to connect to the database</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="query" id="_query">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_query">#</a>
+		<code><a href="source-class-Db.html#216-232" title="Go to source code">query</a>( <span>string <var>$query</var></span> )</code>
+
+		<div class="description short">
+			<p>Run the query</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Run the query</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$query</var></dt>
+					<dd>The query</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="esc" id="_esc">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_esc">#</a>
+		<code><a href="source-class-Db.html#234-250" title="Go to source code">esc</a>( <span>string <var>$value</var></span>, <span>mixed <var>$with_aphostrophe</var> = <span class="php-quote">&quot;'&quot;</span></span> )</code>
+
+		<div class="description short">
+			<p>Escapes special characters in a string for use in an SQL statement</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Escapes special characters in a string for use in an SQL statement</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$value</var></dt>
+					<dd>Value to be escaped</dd>
+					<dt><var>$with_aphostrophe</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
 
 
 
@@ -107,6 +568,159 @@
 
 
 
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="config" id="$config">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Db.html#10-13" title="Go to source code"><var>$config</var></a>
+
+			<div class="description short">
+				<p>$config             Database configuration</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>$config             Database configuration</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$config" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="mysqli" id="$mysqli">
+		<td class="attributes"><code>
+			protected  
+			resource
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Db.html#15-18" title="Go to source code"><var>$mysqli</var></a>
+
+			<div class="description short">
+				<p>$con                The connection to the database</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>$con                The connection to the database</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$mysqli" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="query_type" id="$query_type">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Db.html#20-23" title="Go to source code"><var>$query_type</var></a>
+
+			<div class="description short">
+				<p>$query_type         The query - select/udpate/insert/delete</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>$query_type         The query - select/udpate/insert/delete</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$query_type" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="select_columns" id="$select_columns">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Db.html#25-28" title="Go to source code"><var>$select_columns</var></a>
+
+			<div class="description short">
+				<p>$select_columns     Columns that must be selected from the database</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>$select_columns     Columns that must be selected from the database</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$select_columns" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="where_clause" id="$where_clause">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Db.html#30-33" title="Go to source code"><var>$where_clause</var></a>
+
+			<div class="description short">
+				<p>$where_clause       Where clause</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>$where_clause       Where clause</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$where_clause" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="from_table" id="$from_table">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Db.html#35-38" title="Go to source code"><var>$from_table</var></a>
+
+			<div class="description short">
+				<p>$from_table         Table to wich is made the query</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>$from_table         Table to wich is made the query</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$from_table" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	</table>
 
 
 
